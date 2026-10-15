@@ -1,0 +1,32 @@
+generated: '2026-10-14'
+method: probed
+source: live fetch of https://ideonapi.com/privacy-policy/
+signals:
+  data_retention:
+    evidence:
+      - source: https://ideonapi.com/privacy-policy/
+        http_status: 200
+        fetched: /tmp/ideon-privacy2.html
+        quote: "Upon your request to terminate your account, we will deactivate or delete your account and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our Terms of Use and/or comply with applicable legal requirements."
+    note: Retains data after account deletion for fraud prevention and legal compliance.
+  data_subject_request:
+    evidence:
+      - source: https://ideonapi.com/privacy-policy/
+        http_status: 200
+        fetched: /tmp/ideon-privacy2.html
+        quote: "If you would at any time like to review or change the information in your account or terminate your account, you can: Contact us using the contact information provided."
+    note: Allows users to review, change, or delete their personal data.
+  incident_notification:
+    evidence:
+      - source: https://ideonapi.com/privacy-policy/
+        http_status: 200
+        fetched: /tmp/ideon-privacy2.html
+        quote: "If you have questions or comments about your privacy rights, you may email us at info@ideonapi.com."
+    note: Provides contact for privacy concerns but does not explicitly state breach notification.
+  do_not_track:
+    evidence:
+      - source: https://ideonapi.com/privacy-policy/
+        http_status: 200
+        fetched: /tmp/ideon-privacy2.html
+        quote: "At this stage no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online."
+    note: Declares no response to Do-Not-Track signals.

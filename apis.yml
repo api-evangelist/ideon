@@ -1,23 +1,115 @@
 aid: ideon
+
 name: Ideon
-description: 'Ideon is a company surfaced via the API Evangelist harvest backlog (source: tag-qc) and
-  added to the network as a stub for full-pipeline profiling.'
+
+image: https://ideonapi.com/wp-content/uploads/2025/07/Subtract.png
+
+description: Ideon provides data management and connectivity solutions for employee benefits, offering APIs for plan and rate data, provider directories,
+  enrollment, and market insights. Their platform enables carriers, brokers, and employers to access accurate, up-to-date benefits information,
+  improve quoting, and streamline enrollment processes.
+
 url: https://raw.githubusercontent.com/api-evangelist/ideon/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:tag-qc
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-14 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-14'
+
 modified: '2026-10-14'
+
 tags:
 - Company
-apis: []
+- Benefits
+- Data
+- APIs
+- HealthTech
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/ideon-rules.yml
+- type: JSONLD
+  url: json-ld/ideon-context.jsonld
+- type: Vocabulary
+  url: vocabulary/ideon-vocabulary.yml
+- type: DataModel
+  url: data-model/ideon-data-model.yml
+- type: Conformance
+  url: conformance/ideon-conformance.yml
+- type: SecurityTxt
+  url: well-known/ideon-status-security.txt
+- type: WellKnown
+  url: well-known/ideon-well-known.yml
+- type: Hosts
+  url: hosts/ideon-hosts.yml
+- type: Vendors
+  url: vendors/ideon-vendors.yml
+- type: StatusPage
+  url: https://status.ideonapi.com/
+- type: Security
+  url: https://ideonapi.com/security/
+- type: Newsroom
+  url: https://ideonapi.com/newsroom/
+- type: DomainSecurity
+  url: security/ideon-domain-security.yml
 - type: Website
   url: https://www.ideonapi.com
+- type: DeveloperPortal
+  url: https://developers.ideonapi.com
+- type: Documentation
+  url: https://docs.ideonapi.com
+- type: APIReference
+  url: https://developers.ideonapi.com
+- type: GettingStarted
+  url: https://developers.ideonapi.com/signup
+- type: Support
+  url: https://ideonapi.com/contact
+- type: Blog
+  url: https://ideonapi.com/newsroom
+- type: SignUp
+  url: https://developers.ideonapi.com/signup
+- type: TermsOfService
+  url: https://ideonapi.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://ideonapi.com/privacy-policy
+
+apis:
+- aid: ideon:ideon-api
+  name: Ideon API
+  description: 'Ideon API as documented publicly: 3 operations. Contract generated from the documentation by API Evangelist (2026-10-14); not
+    the provider''s own document.'
+  humanURL: https://docs.ideonapi.com
+  baseURL: https://api.ideonapi.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/ideon-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/ideon-get-networks-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: The public docs at https://docs.ideonapi.com provide no OpenAPI, AsyncAPI, GraphQL, gRPC, or WSDL files; attempts to fetch common spec
+    URLs on https://api.ideonapi.com all returned 404.
+  evidence:
+  - url: https://api.ideonapi.com/openapi.json
+    status: 404
+  checked: '2026-10-14'
+x-enrichment:
+  date: '2026-10-14'
+  status: enriched
+  artifacts_added: 18
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

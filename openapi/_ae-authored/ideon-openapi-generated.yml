@@ -1,0 +1,132 @@
+openapi: 3.1.0
+info:
+  title: Ideon API
+  version: '2026-10-14'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-14: 3 operation(s) read from 2 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Ideon has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 2
+    documentation: 1
+    pages-with-code: 2
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-14'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.ideonapi.com
+  - https://developers.ideonapi.com
+servers:
+- url: https://api.ideonapi.com
+paths:
+  /:
+    get:
+      operationId: get
+      tags:
+      - Api
+      summary: GET /
+      x-source: https://developers.ideonapi.com
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -v https://hello-world-api.3scale.net \n Request \n> GET / HTTP/1.1 \n> User-Agent: curl/7.27.0 \n> Host: https://hello-world-api.3scale.net\
+          \ \n> Accept: */* \n> \n Response \n< HTTP/1.1 200 OK \n< Content-Type: text/plain; charset=utf-8 \n< Connection: close \nHello World!\
+          \ \n --> \n © 2026 Ideon"
+  /networks:
+    get:
+      operationId: get_networks
+      tags:
+      - Networks
+      summary: GET /networks
+      x-source: https://docs.ideonapi.com
+      parameters:
+      - name: search_term
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetNetworksResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -H 'Vericred-Api-Key: YOUR_KEY' \"https://api.ideonapi.com/networks?search_term=Anthem\" \n Versioning Ideon's API is versioned\
+          \ by endpoint. The current default version for all endpoints is v6 . \n Some endpoints feature additional functionality with versions\
+          \ v7 , v8 , or v9 , which can be accessed using the Accept-Version header.\nFor each endpoint, we will indicate in the documentation\
+          \ which ver"
+  /providers/{providerId}:
+    get:
+      operationId: get_providers_providerId
+      tags:
+      - Providers
+      summary: Display a Provider
+      description: GET /providers/1234567898 returns the provider record, optionally limited to selected fields.
+      x-source: https://docs.ideonapi.com
+      parameters:
+      - name: providerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: select
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Comma‑separated list of fields to include in the response
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetNetworksResponse:
+      type: object
+      properties:
+        provider:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            phone:
+              type: string
+            field_we_dont_care_about:
+              type: string
+        states:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              name:
+                type: string
+              code:
+                type: string
+              field_we_dont_care_about:
+                type: string
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Vericred-Api-Key
+security:
+- apiKey: []
+tags:
+- name: Api
+- name: Networks
+- name: Providers
