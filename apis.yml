@@ -85,19 +85,42 @@ common:
   url: https://ideonapi.com/privacy-policy
 
 apis:
-- aid: ideon:ideon-api
-  name: Ideon API
-  description: 'Ideon API as documented publicly: 3 operations. Contract generated from the documentation by API Evangelist (2026-10-14); not
-    the provider''s own document.'
+- aid: ideon:ideon-ideon-api-api
+  name: Ideon Ideon API
+  description: The Ideon API API from Ideon — 1 operation(s) for ideon api.
   humanURL: https://docs.ideonapi.com
   baseURL: https://api.ideonapi.com
+  tags:
+  - Ideon API
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/ideon-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/ideon-ideon-api-api-openapi.yml
   - type: JSONSchema
     url: json-schema/ideon-get-networks-response-schema.json
-
+- aid: ideon:ideon-networks-api
+  name: Ideon Networks API
+  description: The Networks API from Ideon — 1 operation(s) for networks.
+  humanURL: https://docs.ideonapi.com
+  baseURL: https://api.ideonapi.com
+  tags:
+  - Networks
+  properties:
+  - type: OpenAPI
+    url: openapi/ideon-networks-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ideon-get-networks-response-schema.json
+- aid: ideon:ideon-providers-api
+  name: Ideon Providers API
+  description: The Providers API from Ideon — 1 operation(s) for providers.
+  humanURL: https://docs.ideonapi.com
+  baseURL: https://api.ideonapi.com
+  tags:
+  - Providers
+  properties:
+  - type: OpenAPI
+    url: openapi/ideon-providers-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ideon-get-networks-response-schema.json
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec

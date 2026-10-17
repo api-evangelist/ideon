@@ -1,0 +1,22 @@
+{
+  "provider": "ideon",
+  "sources": [
+    "_ae-authored/ideon-openapi-generated.yml"
+  ],
+  "outputs": [
+    "ideon-ideon-api-api-openapi.yml",
+    "ideon-networks-api-openapi.yml",
+    "ideon-providers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ideon-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "ideon-openapi-generated.yml: tagged paths GET / -> Ideon API",
+    "ideon-openapi-generated.yml: declared missing tag: Ideon API",
+    "apis.yml register: written (+3 apis, 3 total)"
+  ],
+  "skipped": []
+}
